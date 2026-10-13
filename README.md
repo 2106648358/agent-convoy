@@ -2,6 +2,8 @@
 
 Agent Convoy 是一个本地优先的会话迁移与历史浏览工具，提供 CLI 和只监听本机的 HTML 历史中心。它支持 Codex CLI、Claude Code、WorkBuddy 三端之间的六条迁移方向，并提供可靠的 Markdown 降级导出。
 
+macOS 用户可以双击项目目录中的 `启动 Agent Convoy.command`，或直接点击已加入程序坞的 Agent Convoy 图标启动 HTML 历史中心。应用 logo 位于 `assets/agent-convoy-logo.png`。
+
 它不是“把历史拼成一个 Prompt”。中间层先解析源端的原生历史，归一到 `agent-convoy/v1`，再由目标 adapter 创建目标端能枚举和恢复的原生会话。
 
 ## 本机验证结论

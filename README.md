@@ -2,7 +2,11 @@
 
 Agent Convoy 是一个本地优先的会话迁移与历史浏览工具，提供 CLI 和只监听本机的 HTML 历史中心。它支持 Codex CLI、Claude Code、WorkBuddy 三端之间的六条迁移方向，并提供可靠的 Markdown 降级导出。
 
-macOS 用户可以双击项目目录中的 `启动 Agent Convoy.command`，或直接点击已加入程序坞的 Agent Convoy 图标启动 HTML 历史中心。应用 logo 位于 `assets/agent-convoy-logo.png`。
+macOS 用户可以双击项目目录中的 `启动 Agent Convoy.command`，或点击程序坞的 Agent Convoy 图标启动 HTML 历史中心。应用 logo 位于 `assets/agent-convoy-logo.png`。
+
+原生 Dock 启动器会启动一个本机服务，并使用默认浏览器打开页面。关闭浏览器页面后再次点击 Dock 图标，会重新打开已有服务；用应用菜单或 Command-Q 退出 Agent Convoy 时会同时关闭该应用启动的服务。启动失败时会弹出提示，日志位于 `~/Library/Logs/AgentConvoy/launcher.log`。
+
+从 GitHub 下载源码后，可双击 `desktop/build.command` 在当前 Mac 上生成 `Agent Convoy.app`（需要 Xcode Command Line Tools）。应用需保持在项目目录旁，再把它拖进 Dock。无需配置机器专用绝对路径。
 
 它不是“把历史拼成一个 Prompt”。中间层先解析源端的原生历史，归一到 `agent-convoy/v1`，再由目标 adapter 创建目标端能枚举和恢复的原生会话。
 

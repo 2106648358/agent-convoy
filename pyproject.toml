@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=58"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-convoy"
+version = "0.2.0"
+description = "Local-first conversation migration between Codex CLI, Claude Code, and WorkBuddy"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Agent Convoy contributors"}]
+
+[project.scripts]
+agent-convoy = "agent_convoy:main"
+
+[tool.setuptools]
+py-modules = ["agent_convoy", "agent_convoy_web"]
+
